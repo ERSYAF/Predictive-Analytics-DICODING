@@ -55,7 +55,7 @@ Terdiri dari 590 sampel dan 14 kolom, antara lain:
 | 13  | TFF1                    | float64   |
 | 14  | REG1A                   | float64   |
 
-Dataset mempunyai beberapa fitur yang terdapat missing value, diantaranya:
+Dataset mempunyai beberapa fitur yang terdapat missing value, diantaranya pada kolom `stage`, `benign_sample_diagnosis`, `plasma_CA19_9`, dan `REG1A`.
 | No. | Kolom                    | Jumlah Non-Null | Tipe Data |
 |-----|--------------------------|------------------|-----------|
 | 1   | sample_id                | 590              | object    |
