@@ -55,6 +55,24 @@ Terdiri dari 590 sampel dan 14 kolom, antara lain:
 | 13  | TFF1                    | float64   |
 | 14  | REG1A                   | float64   |
 
+Dataset mempunyai beberapa fitur yang terdapat missing value, diantaranya:
+| No. | Kolom                    | Jumlah Non-Null | Tipe Data |
+|-----|--------------------------|------------------|-----------|
+| 1   | sample_id                | 590              | object    |
+| 2   | patient_cohort           | 590              | object    |
+| 3   | sample_origin            | 590              | object    |
+| 4   | age                      | 590              | int64     |
+| 5   | sex                      | 590              | object    |
+| 6   | diagnosis                | 590              | int64     |
+| 7   | stage                    | 199              | object    |
+| 8   | benign_sample_diagnosis | 208              | object    |
+| 9   | plasma_CA19_9           | 350              | float64   |
+| 10  | creatinine              | 590              | float64   |
+| 11  | LYVE1                   | 590              | float64   |
+| 12  | REG1B                   | 590              | float64   |
+| 13  | TFF1                    | 590              | float64   |
+| 14  | REG1A                   | 306              | float64   |
+
 ## Data Preparation
 
 Langkah-langkah yang dilakukan:
