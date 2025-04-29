@@ -25,7 +25,17 @@ Melihat tingginya angka kematian dan rendahnya deteksi dini, dibutuhkan pendekat
 
 ## Data Understanding
 
-Dataset: [Urinary Biomarkers for Pancreatic Cancer (Kaggle)](https://www.kaggle.com/datasets/)
+Informasi Dataset:
+
+| Jenis  | Keterangan |
+|--------|------------|
+| **Title** | Urinary biomarkers for pancreatic cancer |
+| **Source** | [Kaggle](https://www.kaggle.com/johnjdavisiv/urinary-biomarkers-for-pancreatic-cancer) |
+| **Maintainer** | [John Davis](https://www.kaggle.com/johnjdavisiv) |
+| **License** | Data files © Original Authors |
+| **Visibility** | Public |
+| **Tags** | biology, cancer, health conditions, beginner, binary classification, medicine |
+| **Usability** | 10.0 |
 
 Terdiri dari 590 sampel dan 14 kolom, antara lain:
 - `sample_id`: ID unik sampel
