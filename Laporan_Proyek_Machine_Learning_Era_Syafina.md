@@ -5,7 +5,7 @@
 
 Proyek ini berada di bidang **Kesehatan**, dengan fokus pada **Prediktif Analitik**: Diagnosis Kanker Pankreas Menggunakan Biomarker Urin.
 
-Kanker pankreas memiliki tingkat kematian yang tinggi karena umumnya baru terdiagnosis pada stadium lanjut. Di Indonesia, tingkat kelangsungan hidup lima tahun sangat rendah karena kurangnya deteksi dini [[1](https://doi.org/10.35816/jiskh.v10i2.132)]. Oleh karena itu, diperlukan metode prediksi yang akurat berbasis data biomarker urin untuk meningkatkan diagnosis dini.
+Kanker pankreas memiliki tingkat kematian yang tinggi karena umumnya baru terdiagnosis pada stadium lanjut. Di Indonesia, tingkat kelangsungan hidup lima tahun sangat rendah karena kurangnya deteksi dini [[1](https://doi.org/10.35816/jiskh.v10i2.132)]. Oleh karena itu, diperlukan metode prediksi dengan model machine learning yang akurat berbasis data biomarker urin untuk meningkatkan diagnosis dini.
 
 ## Business Understanding
 
