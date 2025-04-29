@@ -38,13 +38,22 @@ Informasi Dataset:
 | **Usability** | 10.0 |
 
 Terdiri dari 590 sampel dan 14 kolom, antara lain:
-- `sample_id`: ID unik sampel
-- `patient_cohort`: Cohort pasien
-- `sample_origin`: Asal sampel
-- `age`, `sex`: Demografi pasien
-- `diagnosis`: 1 = Sehat, 2 = Benign, 3 = Kanker Pankreas
-- `stage`: Stadium kanker
-- `plasma_CA19_9`, `creatinine`, `LYVE1`, `REG1B`, `TFF1`, `REG1A`: Biomarker biologis
+| No. | Kolom                    | Tipe Data |
+|-----|--------------------------|-----------|
+| 1   | sample_id                | object    |
+| 2   | patient_cohort           | object    |
+| 3   | sample_origin            | object    |
+| 4   | age                      | int64     |
+| 5   | sex                      | object    |
+| 6   | diagnosis                | int64     |
+| 7   | stage                    | object    |
+| 8   | benign_sample_diagnosis | object    |
+| 9   | plasma_CA19_9           | float64   |
+| 10  | creatinine              | float64   |
+| 11  | LYVE1                   | float64   |
+| 12  | REG1B                   | float64   |
+| 13  | TFF1                    | float64   |
+| 14  | REG1A                   | float64   |
 
 ## Data Preparation
 
