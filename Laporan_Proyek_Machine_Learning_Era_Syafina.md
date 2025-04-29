@@ -7,13 +7,6 @@ Proyek ini berada di bidang **Kesehatan**, dengan fokus pada **Prediktif Analiti
 
 Kanker pankreas memiliki tingkat kematian yang tinggi karena umumnya baru terdiagnosis pada stadium lanjut. Di Indonesia, tingkat kelangsungan hidup lima tahun sangat rendah karena kurangnya deteksi dini. Oleh karena itu, diperlukan metode prediksi yang akurat berbasis data biomarker urin untuk meningkatkan diagnosis dini.
 
-### Referensi:
-- Hanriko, R. (2019)
-- Farokhah, L. (2020)
-- Addany, A. A. (2023)
-- Dahman (2021)
-- Pebdika dkk. (2023)
-
 ## Business Understanding
 
 ### Problem Statements
@@ -85,3 +78,12 @@ Model terbaik adalah **Random Forest**, karena memberikan hasil evaluasi paling 
 
 **Catatan**:  
 Laporan ini dapat diperluas dengan visualisasi data, grafik confusion matrix, atau analisis error lebih lanjut.
+
+
+### Referensi:
+- Hanriko, R. (2019)
+- Farokhah, L. (2020)
+- Addany, A. A. (2023)
+- Dahman (2021)
+- Pebdika dkk. (2023)
+
