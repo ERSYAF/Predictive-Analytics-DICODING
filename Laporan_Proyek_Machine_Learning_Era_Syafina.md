@@ -74,7 +74,7 @@ Dataset mempunyai beberapa fitur yang terdapat missing value, diantaranya pada k
 | 14  | REG1A                   | 306              | float64   |
 
 Dataset mempunyai 5 kolom teratas yang paling banyak outlier
-![Contoh Visualisasi]([Imgur](https://imgur.com/5Z2ip4Z))
+![Contoh Visualisasi](https://imgur.com/a/izmCJsI)
 
 ## Data Preparation
 
