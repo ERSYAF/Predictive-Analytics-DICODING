@@ -216,7 +216,7 @@ model.loc['f1_score', 'Naive Bayes'] = f1_score(y_test, nb_pred, average='weight
 | **Naive Bayes** | Cepat, efisien untuk data besar                          | Asumsi independensi sering tidak sesuai dengan kenyataan                |
 
 ### Pemilihan Model Terbaik
-Model terbaik ditentukan berdasarkan hasil tertinggi dari metrik Accuracy dan F1-Score, tergantung pada tujuan analisis. Dan model Random Forest memiliki performa tertinggi, maka model tersebut dapat dipilih sebagai solusi utama dalam sistem klasifikasi.
+Model terbaik ditentukan berdasarkan hasil tertinggi dari metrik Accuracy dan F1-Score, tergantung pada tujuan analisis. Dan jika model memiliki performa tertinggi, maka model tersebut dapat dipilih sebagai solusi utama dalam sistem klasifikasi.
 
 ## Evaluation
 
@@ -245,8 +245,18 @@ F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
 | SVM           | 0.787234  | 0.767826  |
 | Naive Bayes   | 0.744681  | 0.744681  |
 
-## Kesimpulan
-
+### Hasil Evaluasi:
 - **Random Forest** memberikan performa terbaik dengan **Accuracy** tertinggi sebesar **84.04%** dan **F1-Score** sebesar **83.70%**.
 - **KNN** dan **SVM** juga menunjukkan hasil yang cukup kompetitif.
 - **Naive Bayes** menghasilkan performa terendah di antara semua model yang diuji.
+
+## Model Terbaik
+Berdasarkan hasil evaluasi, model Random Forest dipilih sebagai model terbaik karena memiliki akurasi dan F1-Score tertinggi pada data uji. Berikut adalah grafik untuk nilai aktual vs nilai prediksi menggunakan model Random Forest.
+
+## Evaluasi Terhadap Business Understanding
+- **Menjawab Problem Statement**: Model yang dibuat berhasil menjawab problem statement dengan memprediksi kanker pankreas berdasarkan data biomarker urin, serta mengidentifikasi fitur-fitur yang paling berpengaruh terhadap diagnosis kanker pankreas. Model ini membantu dalam mendeteksi kanker pankreas sejak dini, yang dapat meningkatkan peluang kesembuhan pasien.
+- **Mencapai Goals**: Model Random Forest dengan hyperparameter yang dioptimalkan berhasil mencapai tujuan untuk memberikan prediksi kanker pankreas yang akurat dan mengidentifikasi fitur penting seperti plasma_CA19_9, REG1B, dan creatinine yang berpengaruh terhadap diagnosis.
+- **Dampak dari Solution Statement**: Penggunaan beberapa algoritma dan hyperparameter tuning memberikan dampak positif dengan meningkatkan akurasi prediksi. Solusi yang diterapkan membantu dalam pemilihan model terbaik dan memberikan wawasan lebih mendalam tentang faktor-faktor yang dapat mempengaruhi deteksi kanker pankreas, yang pada gilirannya bisa meningkatkan akurasi diagnosis dan pengambilan keputusan medis.
+
+## Kesimpulan
+Melalui proses pemodelan dan evaluasi, telah berhasil membangun model yang akurat untuk memprediksi kanker pankreas berdasarkan biomarker urin. Model Random Forest terbukti menjadi model terbaik dalam hal akurasi prediksi, dengan pengoptimalan hyperparameter yang memainkan peran penting dalam meningkatkan performa model. Dampak dari solusi yang diimplementasikan sangat positif, memenuhi problem statement dan goals yang telah ditetapkan, serta memberikan wawasan lebih untuk pengembangan sistem diagnosis kanker pankreas yang lebih baik.
