@@ -110,10 +110,11 @@ diagnosis | 0
 5. **Encoding Variabel Kategorikal**  
    Kolom `sex` diubah ke dalam bentuk vektor biner menggunakan **One Hot Encoding** agar bisa diproses oleh model machine learning.
 
-6.**Pembagian Dataset (Train-Test Split)**  
+6. **Pembagian Dataset (Train-Test Split)**  
    Dataset dibagi menjadi:
    - **80%** untuk pelatihan (*train*)
    - **20%** untuk pengujian (*test*)
+     
 ### Jumlah Data
 | Dataset | Jumlah Sampel  |
 |---------|----------------|
