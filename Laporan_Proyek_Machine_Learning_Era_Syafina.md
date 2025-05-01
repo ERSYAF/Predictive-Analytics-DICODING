@@ -226,7 +226,7 @@ Model terbaik ditentukan berdasarkan hasil tertinggi dari metrik Accuracy dan F1
 - **F1-Score**: Rata-rata harmonik dari Precision dan Recall. Metrik ini penting ketika data tidak seimbang karena memperhitungkan false positives dan false negatives.
   
 ### Penjelasan Metrik
----
+
 **Accuracy** dihitung sebagai:
 Accuracy = Jumlah Prediksi Benar / Total Data
 
@@ -236,8 +236,6 @@ F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
 - **Precision**: Seberapa banyak hasil yang relevan dari yang diprediksi sebagai positif.
 - **Recall**: Seberapa banyak hasil yang relevan yang berhasil ditemukan.
 
----
-
 ## Hasil Evaluasi Model
 
 | Model         | Accuracy  | F1-Score  |
@@ -246,8 +244,6 @@ F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
 | Random Forest | 0.840426  | 0.837030  |
 | SVM           | 0.787234  | 0.767826  |
 | Naive Bayes   | 0.744681  | 0.744681  |
-
----
 
 ## Kesimpulan
 
