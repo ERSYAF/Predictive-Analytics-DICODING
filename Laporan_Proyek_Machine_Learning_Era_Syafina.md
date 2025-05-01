@@ -73,7 +73,7 @@ Dataset mempunyai beberapa fitur yang terdapat missing value, diantaranya pada k
 | 13  | TFF1                    | 590              | float64   |
 | 14  | REG1A                   | 306              | float64   |
 
-Dataset mempunyai 5 kolom teratas yang paling banyak outlier
+Dataset mempunyai Ranking Jumlah Outlier sebagai berikut
 Fitur | Jumlah Outlier
 ----- | -------------
 REG1B | 58
