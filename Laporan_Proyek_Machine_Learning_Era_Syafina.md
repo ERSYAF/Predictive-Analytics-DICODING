@@ -23,6 +23,11 @@ Melihat tingginya angka kematian dan rendahnya deteksi dini, dibutuhkan pendekat
 - Menggunakan empat algoritma machine learning: KNN, Random Forest, SVM, dan Naive Bayes.
 - Metrik evaluasi: akurasi, precision, recall, dan F1-score.
 
+### Referensi Terkait
+[[Automated classification of urine biomarkers to diagnose pancreatic cancer using 1-D convolutional neural networks](https://doi.org/10.1186/s13036-023-00340-0)]
+[[Development of PancRISK, a urine biomarker-based risk score for stratified screening of pancreatic cancer patients](https://doi.org/10.1038/s41416-019-0694-0)]
+
+
 ## Data Understanding
 
 Informasi Dataset:
