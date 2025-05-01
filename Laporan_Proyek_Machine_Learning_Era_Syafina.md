@@ -74,7 +74,16 @@ Dataset mempunyai beberapa fitur yang terdapat missing value, diantaranya pada k
 | 14  | REG1A                   | 306              | float64   |
 
 Dataset mempunyai 5 kolom teratas yang paling banyak outlier
-![Contoh Visualisasi](https://imgur.com/a/izmCJsI)
+Fitur | Jumlah Outlier
+----- | -------------
+REG1B | 58
+plasma_CA19_9 | 55
+TFF1 | 48
+REG1A | 43
+creatinine | 26
+LYVE1 | 8
+age | 0
+diagnosis | 0
 
 ## Data Preparation
 
