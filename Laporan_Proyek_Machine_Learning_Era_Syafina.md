@@ -120,7 +120,7 @@ diagnosis | 0
    - **80%** untuk pelatihan (*train*)
    - **20%** untuk pengujian (*test*)
      
-### Jumlah Data
+- Jumlah Data
 | Dataset | Jumlah Sampel  |
 |---------|----------------|
 | Total   | **470**        |
