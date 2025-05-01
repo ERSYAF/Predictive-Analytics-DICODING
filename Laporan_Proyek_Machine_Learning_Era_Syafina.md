@@ -87,14 +87,51 @@ diagnosis | 0
 
 ## Data Preparation
 
-Langkah-langkah yang dilakukan:
-1. Menghapus kolom tidak relevan (`sample_id`, `sample_origin`)
-2. Menangani missing values dengan imputasi mean/mode
-3. One-hot encoding pada `sex` dan `patient_cohort`
-4. Normalisasi data menggunakan MinMaxScaler
-5. Konversi diagnosis menjadi biner: 0 = Non-kanker, 1 = Kanker
-6. Deteksi outlier menggunakan metode IQR
-7. Split data: 80% latih dan 20% uji
+### Teknik Data Preparation
+
+1. **Menghapus Fitur yang Tidak Diperlukan**  
+   Fitur seperti `sample_id`, `patient_cohort`, `sample_origin`, `stage`, dan `benign_sample_diagnosis` dihapus karena tidak relevan terhadap proses diagnosis.
+
+2. **Penanganan Nilai Hilang (Missing Values)**  
+   Karena jumlah nilai hilang cukup besar, baris tidak dihapus. Sebagai gantinya, nilai hilang pada kolom numerik diimputasi dengan **rata-rata (mean)** dari masing-masing kolom.
+
+3. **Penanganan Outlier (Outlier Handling)**  
+   Outlier dapat memengaruhi akurasi model. Untuk itu, nilai-nilai outlier pada fitur numerik diidentifikasi dan dihapus menggunakan metode **Interquartile Range (IQR)**.
+
+4. **Penyederhanaan Label Diagnosis**  
+   Kolom diagnosis awalnya memiliki 3 kelas:
+   - `1` = Sehat
+   - `2` = Penyakit jinak
+   - `3` = Kanker pankreas  
+   Disederhanakan menjadi:
+   - `0` = Bukan kanker pankreas (`1` dan `2`)
+   - `1` = Kanker pankreas (`3`)
+   - 
+5. **Encoding Variabel Kategorikal**  
+   Kolom `sex` diubah ke dalam bentuk vektor biner menggunakan **One Hot Encoding** agar bisa diproses oleh model machine learning.
+
+6.**Pembagian Dataset (Train-Test Split)**  
+   Dataset dibagi menjadi:
+   - **80%** untuk pelatihan (*train*)
+   - **20%** untuk pengujian (*test*)
+### Jumlah Data
+| Dataset | Jumlah Sampel  |
+|---------|----------------|
+| Total   | **470**        |
+| Train   | **376**        |
+| Test    | **94**         |
+
+7. **Normalisasi Fitur Numerik (Feature Scaling)**  
+   Semua fitur numerik dinormalisasi menggunakan `StandardScaler` agar setiap fitur memiliki skala yang seragam (mean = 0, std = 1).
+
+### Alasan Tahapan Data Preparation Dilakukan
+
+- **Menghapus fitur tidak relevan** untuk mengurangi noise dan mempercepat pelatihan
+- **Handling missing values** menjaga informasi penting tetap utuh
+- **Menghapus outlier** meningkatkan kualitas data dan akurasi model
+- **One-hot encoding** agar model bisa membaca data kategorikal
+- **Simplifikasi diagnosis** untuk fokus pada prediksi kanker pankreas
+- **Normalisasi** untuk mencegah dominasi fitur tertentu karena skala besar
 
 ## Modeling
 
