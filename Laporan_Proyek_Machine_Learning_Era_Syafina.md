@@ -135,12 +135,20 @@ diagnosis | 0
 - **Normalisasi** untuk mencegah dominasi fitur tertentu karena skala besar
 
 ## Modeling
+### Tahap Modeling
 
-Model yang digunakan:
-- **KNN** (K=5, Euclidean distance)
-- **Random Forest** (100 pohon, kriteria entropy)
-- **SVM** (kernel RBF, C=1.0)
-- **Naive Bayes** (Gaussian)
+Pada tahap ini, kita akan melatih beberapa model klasifikasi dan mengevaluasinya menggunakan dua metrik utama: **Accuracy** dan **F1-Score**. Model yang akan digunakan adalah:
+
+- **K-Nearest Neighbors (KNN)**
+- **Random Forest**
+- **Support Vector Machine (SVM)**
+- **Naive Bayes**
+
+### Menyiapkan DataFrame untuk Analisis Masing-Masing Model
+```python
+# Menyiapkan DataFrame untuk menyimpan hasil evaluasi masing-masing model
+model = pd.DataFrame(index=['accuracy_score', 'f1_score'], columns=['KNN', 'RandomForest', 'SVM', 'Naive Bayes'])
+```
 
 Semua model dilatih pada data latih dan diuji pada data uji.
 
