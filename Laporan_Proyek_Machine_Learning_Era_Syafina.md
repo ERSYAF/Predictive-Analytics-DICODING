@@ -5,9 +5,9 @@
 
 Proyek ini berada di bidang **Kesehatan**, dengan fokus pada **Prediktif Analitik**: Diagnosis Kanker Pankreas Menggunakan Biomarker Urin.
 
-Kanker pankreas merupakan salah satu jenis kanker paling mematikan, dengan tingkat kelangsungan hidup yang rendah akibat diagnosis yang sering terlambat. Menurut data GLOBOCAN 2012, kanker ini menempati peringkat ke-13 dalam insiden dan ke-8 dalam kematian secara global. Di Amerika Serikat, kanker pankreas menjadi penyebab kematian keempat akibat kanker saluran pencernaan, sementara di Indonesia, tingkat kelangsungan hidup satu tahun hanya sekitar 24% dan lima tahun hanya 5%, sebagian besar karena kasus baru terdeteksi setelah mencapai tahap metastasis [[1](https://doi.org/10.35816/jiskh.v10i2.132)].
+Kanker pankreas merupakan salah satu jenis kanker paling mematikan, dengan tingkat kelangsungan hidup yang rendah akibat diagnosis yang sering terlambat. Menurut data GLOBOCAN 2012, kanker ini menempati peringkat ke-13 dalam insiden dan ke-8 dalam kematian secara global. Di Amerika Serikat, kanker pankreas menjadi penyebab kematian keempat akibat kanker saluran pencernaan, sementara di Indonesia, tingkat kelangsungan hidup satu tahun hanya sekitar 24% dan lima tahun hanya 5%, sebagian besar karena kasus baru terdeteksi setelah mencapai tahap metastasis.
 
-Melihat tingginya angka kematian dan rendahnya deteksi dini, dibutuhkan pendekatan baru dalam diagnosis kanker pankreas. Proyek ini bertujuan mengembangkan model prediktif berbasis machine learning menggunakan data biomarker urin sebagai metode non-invasif untuk mendeteksi kanker sejak dini. Diharapkan model ini dapat membantu dokter dalam pengambilan keputusan medis secara lebih cepat dan akurat, sehingga meningkatkan peluang kesembuhan pasien [[2](https://doi.org/10.1038/s41598-019-55523-x)].
+Melihat tingginya angka kematian dan rendahnya deteksi dini, dibutuhkan pendekatan baru dalam diagnosis kanker pankreas. Proyek ini bertujuan mengembangkan model prediktif berbasis machine learning menggunakan data biomarker urin sebagai metode non-invasif untuk mendeteksi kanker sejak dini. Diharapkan model ini dapat membantu dokter dalam pengambilan keputusan medis secara lebih cepat dan akurat, sehingga meningkatkan peluang kesembuhan pasien.
 
 ## Business Understanding
 
@@ -24,8 +24,8 @@ Melihat tingginya angka kematian dan rendahnya deteksi dini, dibutuhkan pendekat
 - Metrik evaluasi: akurasi, precision, recall, dan F1-score.
 
 ### Referensi Terkait
-[[Automated classification of urine biomarkers to diagnose pancreatic cancer using 1-D convolutional neural networks](https://doi.org/10.1186/s13036-023-00340-0)]
-[[Development of PancRISK, a urine biomarker-based risk score for stratified screening of pancreatic cancer patients](https://doi.org/10.1038/s41416-019-0694-0)]
+[Automated classification of urine biomarkers to diagnose pancreatic cancer using 1-D convolutional neural networks](https://doi.org/10.1186/s13036-023-00340-0)
+[Development of PancRISK, a urine biomarker-based risk score for stratified screening of pancreatic cancer patients](https://doi.org/10.1038/s41416-019-0694-0)
 
 
 ## Data Understanding
