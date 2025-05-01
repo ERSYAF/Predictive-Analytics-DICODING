@@ -150,37 +150,107 @@ Pada tahap ini, kita akan melatih beberapa model klasifikasi dan mengevaluasinya
 model = pd.DataFrame(index=['accuracy_score', 'f1_score'], columns=['KNN', 'RandomForest', 'SVM', 'Naive Bayes'])
 ```
 
-Semua model dilatih pada data latih dan diuji pada data uji.
+### Pelatihan dan Evaluasi Model
+1. **K-Nearest Neighbors (KNN)**
+```python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, f1_score
+
+model_knn = KNeighborsClassifier(n_neighbors=3)
+model_knn.fit(X_train, y_train)
+knn_pred = model_knn.predict(X_test)
+
+model.loc['accuracy_score', 'KNN'] = accuracy_score(y_test, knn_pred)
+model.loc['f1_score', 'KNN'] = f1_score(y_test, knn_pred, average='weighted')
+```
+2. **Random Forest**
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+model_rf = RandomForestClassifier(n_estimators=50, max_depth=16, random_state=55)
+model_rf.fit(X_train, y_train)
+rf_pred = model_rf.predict(X_test)
+
+model.loc['accuracy_score', 'RandomForest'] = accuracy_score(y_test, rf_pred)
+model.loc['f1_score', 'RandomForest'] = f1_score(y_test, rf_pred, average='weighted')
+```
+3. **Support Vector Machine (SVM)**
+```python
+from sklearn.svm import SVC
+
+model_svm = SVC(random_state=55)
+model_svm.fit(X_train, y_train)
+svm_pred = model_svm.predict(X_test)
+
+model.loc['accuracy_score', 'SVM'] = accuracy_score(y_test, svm_pred)
+model.loc['f1_score', 'SVM'] = f1_score(y_test, svm_pred, average='weighted')
+```
+4. **Naive Bayes**
+```python
+from sklearn.naive_bayes import GaussianNB
+
+model_nb = GaussianNB()
+model_nb.fit(X_train, y_train)
+nb_pred = model_nb.predict(X_test)
+
+model.loc['accuracy_score', 'Naive Bayes'] = accuracy_score(y_test, nb_pred)
+model.loc['f1_score', 'Naive Bayes'] = f1_score(y_test, nb_pred, average='weighted')
+```
+
+### Ringkasan Parameter & Karakteristik Model
+
+| Model          | Parameter Utama                                    | Deskripsi Singkat                                                 |
+|----------------|----------------------------------------------------|------------------------------------------------------------------|
+| **KNN**        | `n_neighbors=3`                                    | Mengklasifikasikan berdasarkan tetangga terdekat                 |
+| **RandomForest**| `n_estimators=50`, `max_depth=16`, `random_state=55` | Ensemble dari decision tree, lebih stabil dan akurat          |
+| **SVM**        | `random_state=55`                                  | Mencari margin optimal antara kelas                              |
+| **Naive Bayes**| -                                                  | Probabilistik, cepat dan sederhana, cocok untuk data Gaussian    |
+
+
+### Kelebihan dan Kekurangan Model
+| Model        | Kelebihan                                                   | Kekurangan                                                              |
+|--------------|-------------------------------------------------------------|-------------------------------------------------------------------------|
+| **KNN**      | Sederhana, tanpa asumsi kuat                                | Lambat untuk dataset besar, sensitif terhadap outlier                   |
+| **Random Forest** | Akurat, robust terhadap overfitting, bisa menangani data kompleks | Sulit diinterpretasi, butuh banyak memori                    |
+| **SVM**      | Efektif untuk data non-linear, margin maksimum              | Butuh tuning parameter, lambat untuk dataset besar                      |
+| **Naive Bayes** | Cepat, efisien untuk data besar                          | Asumsi independensi sering tidak sesuai dengan kenyataan                |
+
+### Pemilihan Model Terbaik
+Model terbaik ditentukan berdasarkan hasil tertinggi dari metrik Accuracy dan F1-Score, tergantung pada tujuan analisis. Dan model Random Forest memiliki performa tertinggi, maka model tersebut dapat dipilih sebagai solusi utama dalam sistem klasifikasi.
 
 ## Evaluation
 
-### Metrik Evaluasi:
-- **Akurasi**: proporsi prediksi benar
-- **Precision**: TP / (TP + FP)
-- **Recall**: TP / (TP + FN)
-- **F1-Score**: harmonisasi precision dan recall
+### Metrik Evaluasi
 
-### Hasil Evaluasi:
+- **Accuracy**: Persentase prediksi yang benar dari keseluruhan data. Metrik ini berguna ketika data seimbang.
+- **F1-Score**: Rata-rata harmonik dari Precision dan Recall. Metrik ini penting ketika data tidak seimbang karena memperhitungkan false positives dan false negatives.
+  
+### Penjelasan Metrik
+---
+**Accuracy** dihitung sebagai:
+Accuracy = Jumlah Prediksi Benar / Total Data
 
-| Model           | Akurasi | Precision | Recall | F1-Score |
-|----------------|---------|-----------|--------|----------|
-| KNN            | 0.798   | 0.76      | 0.79   | 0.77     |
-| Random Forest  | **0.840** | **0.83**  | **0.84** | **0.83** |
-| SVM            | 0.787   | 0.75      | 0.78   | 0.76     |
-| Naive Bayes    | 0.734   | 0.70      | 0.73   | 0.71     |
+**F1-Score** dihitung sebagai:
+F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
 
-Model terbaik adalah **Random Forest**, karena memberikan hasil evaluasi paling optimal.
+- **Precision**: Seberapa banyak hasil yang relevan dari yang diprediksi sebagai positif.
+- **Recall**: Seberapa banyak hasil yang relevan yang berhasil ditemukan.
 
 ---
 
-**Catatan**:  
-Laporan ini dapat diperluas dengan visualisasi data, grafik confusion matrix, atau analisis error lebih lanjut.
+## Hasil Evaluasi Model
 
+| Model         | Accuracy  | F1-Score  |
+|---------------|-----------|-----------|
+| KNN           | 0.797872  | 0.790177  |
+| Random Forest | 0.840426  | 0.837030  |
+| SVM           | 0.787234  | 0.767826  |
+| Naive Bayes   | 0.744681  | 0.744681  |
 
-### Referensi:
-- Hanriko, R. (2019)
-- Farokhah, L. (2020)
-- Addany, A. A. (2023)
-- Dahman (2021)
-- Pebdika dkk. (2023)
+---
 
+## Kesimpulan
+
+- **Random Forest** memberikan performa terbaik dengan **Accuracy** tertinggi sebesar **84.04%** dan **F1-Score** sebesar **83.70%**.
+- **KNN** dan **SVM** juga menunjukkan hasil yang cukup kompetitif.
+- **Naive Bayes** menghasilkan performa terendah di antara semua model yang diuji.
