@@ -141,13 +141,22 @@ diagnosis | 0
 
 ## Modeling
 ### Tahap Modeling
-
-Pada tahap ini, kita akan melatih beberapa model klasifikasi dan mengevaluasinya menggunakan dua metrik utama: **Accuracy** dan **F1-Score**. Model yang akan digunakan adalah:
-
+Pada tahap ini, beberapa algoritma klasifikasi akan diterapkan untuk memprediksi label target berdasarkan fitur pada dataset. Kita akan melatih dan mengevaluasi setiap model menggunakan dua metrik utama, yaitu **Accuracy** dan **F1-Score**, guna membandingkan performa mereka dalam menangani dataset ini. Model yang digunakan adalah:
 - **K-Nearest Neighbors (KNN)**
+1. Cara kerja: KNN mengklasifikasikan data berdasarkan k tetangga terdekat dari titik data baru. Jarak yang umum digunakan adalah Euclidean distance. Model ini tidak mempelajari fungsi prediktif secara eksplisit, melainkan menggunakan seluruh dataset saat melakukan prediksi (lazy learner).
+2. Penerapan di dataset: Model ini menggunakan `n_neighbors=3`, artinya setiap data baru diklasifikasikan berdasarkan 3 data terdekat dalam data latih. Cocok untuk dataset dengan distribusi yang relatif seimbang dan tidak terlalu besar.
+   
 - **Random Forest**
+1. Cara kerja: Random Forest adalah algoritma ensemble learning yang membangun banyak pohon keputusan (decision trees) secara acak, lalu menggabungkan hasil prediksi mereka untuk menghasilkan output yang lebih stabil dan akurat. Model ini mengurangi overfitting dan menangani data non-linear dengan baik.
+2. Penerapan di dataset: Dengan `n_estimators=50` dan `max_depth=16`, model ini cukup dalam untuk menangkap pola kompleks dalam data namun tetap dikendalikan untuk menghindari overfitting. Cocok untuk dataset yang kompleks dan memiliki banyak fitur.
+
 - **Support Vector Machine (SVM)**
+1. Cara kerja: SVM bekerja dengan mencari hyperplane terbaik yang memisahkan kelas dalam ruang berdimensi tinggi. SVM sangat efektif untuk data non-linear dengan menggunakan kernel trick, walaupun pada implementasi awal ini menggunakan pengaturan default (linear).
+2. Penerapan di dataset: SVM sering unggul dalam klasifikasi dengan margin sempit dan distribusi data yang kompleks.
+   
 - **Naive Bayes**
+1. Cara kerja: Naive Bayes mengasumsikan bahwa setiap fitur adalah independen satu sama lain dan menghitung probabilitas dari setiap kelas. Model ini menggunakan Teorema Bayes dan cocok untuk data dengan distribusi Gaussian (kontinu).
+2. Penerapan di dataset: Model ini cocok untuk dataset dengan fitur numerik yang berdistribusi normal. Cepat dilatih dan efisien, meskipun asumsi independensi bisa menjadi kelemahan jika fitur saling berkorelasi.
 
 ### Menyiapkan DataFrame untuk Analisis Masing-Masing Model
 ```python
@@ -221,7 +230,7 @@ model.loc['f1_score', 'Naive Bayes'] = f1_score(y_test, nb_pred, average='weight
 | **Naive Bayes** | Cepat, efisien untuk data besar                          | Asumsi independensi sering tidak sesuai dengan kenyataan                |
 
 ### Pemilihan Model Terbaik
-Model terbaik ditentukan berdasarkan hasil tertinggi dari metrik Accuracy dan F1-Score, tergantung pada tujuan analisis. Dan jika model memiliki performa tertinggi, maka model tersebut dapat dipilih sebagai solusi utama dalam sistem klasifikasi.
+Model terbaik dipilih berdasarkan nilai Accuracy dan F1-Score tertinggi. Accuracy menunjukkan seberapa sering model memprediksi dengan benar, sementara F1-Score mempertimbangkan keseimbangan antara presisi dan recall, terutama penting jika data tidak seimbang. Model yang memberikan kombinasi terbaik dari kedua metrik akan dianggap paling sesuai untuk diterapkan pada sistem klasifikasi berbasis dataset ini.
 
 ## Evaluation
 
