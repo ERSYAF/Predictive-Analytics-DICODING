@@ -42,23 +42,25 @@ Informasi Dataset:
 | **Tags** | biology, cancer, health conditions, beginner, binary classification, medicine |
 | **Usability** | 10.0 |
 
-Terdiri dari 590 sampel dan 14 kolom, antara lain:
-| No. | Kolom                    | Tipe Data |
-|-----|--------------------------|-----------|
-| 1   | sample_id                | object    |
-| 2   | patient_cohort           | object    |
-| 3   | sample_origin            | object    |
-| 4   | age                      | int64     |
-| 5   | sex                      | object    |
-| 6   | diagnosis                | int64     |
-| 7   | stage                    | object    |
-| 8   | benign_sample_diagnosis | object    |
-| 9   | plasma_CA19_9           | float64   |
-| 10  | creatinine              | float64   |
-| 11  | LYVE1                   | float64   |
-| 12  | REG1B                   | float64   |
-| 13  | TFF1                    | float64   |
-| 14  | REG1A                   | float64   |
+Dataset ini terdiri dari 590 sampel dan 14 kolom. Berikut adalah penjelasan nama kolom, tipe data, serta deskripsi dari masing-masing fitur:
+| No. | Kolom                     | Tipe Data | Deskripsi                                                                                     |
+| --- | ------------------------- | --------- | --------------------------------------------------------------------------------------------- |
+| 1   | sample\_id                | object    | ID unik untuk mengidentifikasi setiap individu dalam data.                                    |
+| 2   | patient\_cohort           | object    | Menunjukkan kelompok pasien: Cohort 1 (lama) atau Cohort 2 (baru).                            |
+| 3   | sample\_origin            | object    | Menyatakan sumber asal sampel yang digunakan.                                                 |
+| 4   | age                       | int64     | Usia pasien dalam tahun.                                                                      |
+| 5   | sex                       | object    | Jenis kelamin pasien: M untuk pria, F untuk wanita.                                           |
+| 6   | diagnosis                 | int64     | Status diagnosis pasien: 1 (sehat), 2 (penyakit hepatobiliary jinak), 3 (kanker pankreas).    |
+| 7   | stage                     | object    | Stadium kanker pankreas: IA, IB, IIA, IIIB, III, IV.                                          |
+| 8   | benign\_sample\_diagnosis | object    | Diagnosis pada pasien dengan penyakit jinak (non-kanker).                                     |
+| 9   | plasma\_CA19\_9           | float64   | Kadar CA 19-9 dalam plasma darah, penanda tumor untuk kanker pankreas.                        |
+| 10  | creatinine                | float64   | Biomarker dalam urin yang digunakan untuk menilai fungsi ginjal.                              |
+| 11  | LYVE1                     | float64   | Kadar reseptor LYVE1 dalam urin, terkait penyebaran sel kanker melalui sistem limfatik.       |
+| 12  | REG1B                     | float64   | Kadar protein REG1B dalam urin, berkaitan dengan regenerasi jaringan pankreas.                |
+| 13  | TFF1                      | float64   | Kadar Trefoil Factor 1 dalam urin, berperan dalam proses penyembuhan atau perbaikan jaringan. |
+| 14  | REG1A                     | float64   | Kadar protein REG1A dalam urin, juga berkaitan dengan regenerasi pankreas.                    |
+
+
 
 Dataset mempunyai beberapa fitur yang terdapat missing value, diantaranya pada kolom `stage`, `benign_sample_diagnosis`, `plasma_CA19_9`, dan `REG1A`.
 | No. | Kolom                    | Jumlah Non-Null | Tipe Data |
@@ -128,7 +130,7 @@ diagnosis | 0
 | Test    | **94**         |
 
 7. **Normalisasi Fitur Numerik (Feature Scaling)**  
-   Semua fitur numerik dinormalisasi menggunakan `StandardScaler` agar setiap fitur memiliki skala yang seragam (mean = 0, std = 1).
+   Semua fitur numerik dinormalisasi menggunakan MinMaxScaler agar setiap fitur berada dalam rentang [0, 1]. Ini dilakukan untuk menyamakan skala antar fitur dan mempercepat proses pelatihan model.
 
 ### Alasan Tahapan Data Preparation Dilakukan
 
